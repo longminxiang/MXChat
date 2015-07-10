@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MXInputToobar">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="px9-37-Efl">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                </imageView>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VY9-uz-L7e">
+                    <rect key="frame" x="4" y="0.0" width="40" height="44"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="kfg-3x-vRu"/>
+                        <constraint firstAttribute="width" constant="40" id="uMe-s5-OSN"/>
+                    </constraints>
+                    <state key="normal">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonToucheds:" destination="iN0-l3-epB" eventType="touchUpInside" id="qbe-EV-JGi"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iyo-m8-Ftb">
+                    <rect key="frame" x="232" y="0.0" width="40" height="44"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <state key="normal">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonToucheds:" destination="iN0-l3-epB" eventType="touchUpInside" id="404-Ry-G75"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nb4-U8-ZWN">
+                    <rect key="frame" x="276" y="0.0" width="40" height="44"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <state key="normal">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonToucheds:" destination="iN0-l3-epB" eventType="touchUpInside" id="ZfR-4I-RKM"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQv-PX-XvX">
+                    <rect key="frame" x="48" y="5" width="180" height="34"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="send"/>
+                </textView>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWX-hv-ct1">
+                    <rect key="frame" x="48" y="5" width="180" height="34"/>
+                    <state key="normal" title="按住说话">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="recordVoiceCancel" destination="iN0-l3-epB" eventType="touchCancel" id="9Pz-YB-Ws6"/>
+                        <action selector="recordVoiceCancel" destination="iN0-l3-epB" eventType="touchUpOutside" id="mNb-Ci-CDh"/>
+                        <action selector="recordVoiceEnd" destination="iN0-l3-epB" eventType="touchUpInside" id="OYc-Qg-0OQ"/>
+                        <action selector="recordVoiceStart" destination="iN0-l3-epB" eventType="touchDown" id="nfg-T4-IHI"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="nb4-U8-ZWN" firstAttribute="leading" secondItem="Iyo-m8-Ftb" secondAttribute="trailing" constant="4" id="3dJ-VW-Z6M"/>
+                <constraint firstItem="Iyo-m8-Ftb" firstAttribute="width" secondItem="VY9-uz-L7e" secondAttribute="width" id="4ZW-sk-Lef"/>
+                <constraint firstAttribute="bottom" secondItem="vWX-hv-ct1" secondAttribute="bottom" constant="5" id="Bqx-Hs-x2n"/>
+                <constraint firstAttribute="bottom" secondItem="px9-37-Efl" secondAttribute="bottom" id="CAN-5m-ebF"/>
+                <constraint firstItem="Iyo-m8-Ftb" firstAttribute="height" secondItem="VY9-uz-L7e" secondAttribute="height" id="FO6-c7-zBI"/>
+                <constraint firstAttribute="trailing" secondItem="px9-37-Efl" secondAttribute="trailing" id="H2Z-B5-7pi"/>
+                <constraint firstItem="nb4-U8-ZWN" firstAttribute="height" secondItem="VY9-uz-L7e" secondAttribute="height" id="LPY-46-gJw"/>
+                <constraint firstItem="vWX-hv-ct1" firstAttribute="leading" secondItem="VY9-uz-L7e" secondAttribute="trailing" constant="4" id="PP6-mf-DWe"/>
+                <constraint firstItem="Iyo-m8-Ftb" firstAttribute="leading" secondItem="LQv-PX-XvX" secondAttribute="trailing" constant="4" id="QlV-kh-kN4"/>
+                <constraint firstItem="Iyo-m8-Ftb" firstAttribute="leading" secondItem="vWX-hv-ct1" secondAttribute="trailing" constant="4" id="VIj-9a-drf"/>
+                <constraint firstItem="nb4-U8-ZWN" firstAttribute="width" secondItem="VY9-uz-L7e" secondAttribute="width" id="XqN-gc-PH6"/>
+                <constraint firstAttribute="trailing" secondItem="nb4-U8-ZWN" secondAttribute="trailing" constant="4" id="bum-ZD-4zY"/>
+                <constraint firstAttribute="bottom" secondItem="nb4-U8-ZWN" secondAttribute="bottom" id="dBC-Vk-SUR"/>
+                <constraint firstItem="VY9-uz-L7e" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="4" id="dap-lR-rzU"/>
+                <constraint firstItem="LQv-PX-XvX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="e1f-7i-Ebc"/>
+                <constraint firstItem="px9-37-Efl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fa0-pL-9mH"/>
+                <constraint firstAttribute="bottom" secondItem="Iyo-m8-Ftb" secondAttribute="bottom" id="fv5-u0-yZV"/>
+                <constraint firstItem="px9-37-Efl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gvg-uN-f0a"/>
+                <constraint firstItem="vWX-hv-ct1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="iTH-Ya-4gf"/>
+                <constraint firstAttribute="bottom" secondItem="VY9-uz-L7e" secondAttribute="bottom" id="pQ2-Br-8gk"/>
+                <constraint firstItem="LQv-PX-XvX" firstAttribute="leading" secondItem="VY9-uz-L7e" secondAttribute="trailing" constant="4" id="wM7-nm-DUL"/>
+                <constraint firstAttribute="bottom" secondItem="LQv-PX-XvX" secondAttribute="bottom" constant="5" id="wdk-Zs-GzC"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bgView" destination="px9-37-Efl" id="hJs-4D-oiV"/>
+                <outlet property="recordButton" destination="vWX-hv-ct1" id="avM-im-bXh"/>
+                <outlet property="textView" destination="LQv-PX-XvX" id="os3-0U-7wv"/>
+                <outletCollection property="buttons" destination="VY9-uz-L7e" id="xqr-1v-qmz"/>
+                <outletCollection property="buttons" destination="Iyo-m8-Ftb" id="vDo-5S-ofP"/>
+                <outletCollection property="buttons" destination="nb4-U8-ZWN" id="55p-Xh-7vl"/>
+            </connections>
+            <point key="canvasLocation" x="362" y="410"/>
+        </view>
+    </objects>
+</document>
