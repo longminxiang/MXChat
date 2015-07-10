@@ -1,0 +1,2 @@
+# MXChat
+view for message
