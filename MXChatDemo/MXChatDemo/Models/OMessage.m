@@ -32,4 +32,37 @@
     }
 }
 
++ (OMessage *)textMessageWithText:(NSString *)text
+{
+    OMessage *msg = [OMessage new];
+    msg.type = MXChatMessageTypeText;
+    msg.text = text;
+    msg.ownerType = MXChatMessageOwnerTypeMine;
+    msg.sendTime = [NSDate date];
+    return msg;
+}
+
++ (OMessage *)imageMessageWithKey:(NSString *)key path:(NSString *)path
+{
+    OMessage *msg = [OMessage new];
+    msg.type = MXChatMessageTypeImage;
+    msg.imageURL = key;
+    msg.path = path;
+    msg.ownerType = MXChatMessageOwnerTypeMine;
+    msg.sendTime = [NSDate date];
+    return msg;
+}
+
++ (OMessage *)audioMessageWithKey:(NSString *)key path:(NSString *)path time:(float)time
+{
+    OMessage *msg = [OMessage new];
+    msg.type = MXChatMessageTypeAudio;
+    msg.audioURL = key;
+    msg.path = path;
+    msg.audioTime = time;
+    msg.ownerType = MXChatMessageOwnerTypeMine;
+    msg.sendTime = [NSDate date];
+    return msg;
+}
+
 @end

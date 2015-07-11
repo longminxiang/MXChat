@@ -41,4 +41,8 @@
 @property (nonatomic, copy) NSString *owner;
 @property (nonatomic, assign) BOOL isGroup;
 
++ (OMessage *)textMessageWithText:(NSString *)text;
++ (OMessage *)imageMessageWithKey:(NSString *)key path:(NSString *)path;
++ (OMessage *)audioMessageWithKey:(NSString *)key path:(NSString *)path time:(float)time;
+
 @end

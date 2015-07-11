@@ -7,6 +7,7 @@
 
 #import "ChatVC.h"
 #import "MXChatView.h"
+#import "OMessage.h"
 
 @interface ChatVC ()
 
@@ -45,12 +46,18 @@
     self.chatView = chatView;
     
     [chatView setTextMessageOutBlock:^(NSString *text) {
+        OMessage *msg = [OMessage textMessageWithText:text];
+        [self.chatView addMessage:msg];
     }];
     
     [chatView setImageMessageOutBlock:^(UIImage *image, NSString *path, NSString *key) {
+        OMessage *msg = [OMessage imageMessageWithKey:key path:path];
+        [self.chatView addMessage:msg];
     }];
     
     [chatView setAudioMessageOutBlock:^(NSData *data, float time, NSString *path, NSString *key) {
+        OMessage *msg = [OMessage audioMessageWithKey:key path:path time:time];
+        [self.chatView addMessage:msg];
     }];
     
     [chatView setResendMessageBlock:^(id<MXChatMessage> message) {
