@@ -1,0 +1,1 @@
+../../../../../MXChatView/Core/MXPhotoViewer/MXPhotoDetailView.h

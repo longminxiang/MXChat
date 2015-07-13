@@ -1,0 +1,28 @@
+PODS:
+  - DACircularProgress (2.3.1)
+  - EGOCache (2.1.4)
+  - MBProgressHUD (0.9.1)
+  - MXChat (0.1.0):
+    - DACircularProgress (= 2.3.1)
+    - EGOCache (= 2.1.4)
+    - MBProgressHUD (= 0.9.1)
+    - SDWebImage (= 3.7.2)
+  - SDWebImage (3.7.2):
+    - SDWebImage/Core (= 3.7.2)
+  - SDWebImage/Core (3.7.2)
+
+DEPENDENCIES:
+  - MXChat (from `../`)
+
+EXTERNAL SOURCES:
+  MXChat:
+    :path: ../
+
+SPEC CHECKSUMS:
+  DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
+  EGOCache: 1f28f0837429145c1085fe2de285fc335d087ff3
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  MXChat: 42632c759f57b1d6551842c703d2400fa9f14451
+  SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
+
+COCOAPODS: 0.37.2

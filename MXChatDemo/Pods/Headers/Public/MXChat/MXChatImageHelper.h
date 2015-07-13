@@ -1,0 +1,1 @@
+../../../../../MXChatView/Helper/MXChatImageHelper.h

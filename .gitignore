@@ -24,7 +24,4 @@ DerivedData
 #
 #Pods/
 .DS_Store
-MXChatDemo/MXChatDemo.xcworkspace
-MXChatDemo/Pods
-MXChatDemo/Podfile.lock
 contents.xcworkspacedata

@@ -1,0 +1,1 @@
+../../../../../MXChatView/Categorys/UIImageView+SingalTap.h

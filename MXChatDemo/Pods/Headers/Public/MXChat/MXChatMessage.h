@@ -1,0 +1,1 @@
+../../../../../MXChatView/Model/MXChatMessage.h
