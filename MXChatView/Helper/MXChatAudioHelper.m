@@ -7,9 +7,9 @@
 
 #import "MXChatAudioHelper.h"
 #import "MXVoiceRecorder.h"
-#import "MXEGOCache.h"
 #import "MXChatAudioPlayer.h"
 #import "MXChatPrefix.h"
+#import <EGOCache/EGOCache.h>
 
 @implementation MXChatAudioHelper
 
@@ -46,24 +46,24 @@
 
 + (NSData *)audioWithKey:(NSString *)key
 {
-    NSData *data = [[MXEGOCache globalCache] dataForKey:key];
+    NSData *data = [[EGOCache globalCache] dataForKey:key];
     return data;
 }
 
 + (NSString *)cacheAudioData:(NSData *)data key:(NSString *)key
 {
-    if (![[MXEGOCache globalCache] hasCacheForKey:key]) {
-        [[MXEGOCache globalCache] setData:data forKey:key withTimeoutInterval:MAXFLOAT];
+    if (![[EGOCache globalCache] hasCacheForKey:key]) {
+        [[EGOCache globalCache] setData:data forKey:key withTimeoutInterval:MAXFLOAT];
     }
-    NSString *path = [[MXEGOCache globalCache] pathForKey:key];
+    NSString *path = [[EGOCache globalCache] pathForKey:key];
     return path;
 }
 
 + (NSString *)cacheAudioDataWithPath:(NSString *)path
 {
     NSString *key = [path mxc_MD5];
-    [[MXEGOCache globalCache] moveFilePath:path asKey:key withTimeoutInterval:MAXFLOAT];
-    NSString *nowPath = [[MXEGOCache globalCache] pathForKey:key];
+    [[EGOCache globalCache] moveFilePath:path asKey:key withTimeoutInterval:MAXFLOAT];
+    NSString *nowPath = [[EGOCache globalCache] pathForKey:key];
     return nowPath;
 }
 
