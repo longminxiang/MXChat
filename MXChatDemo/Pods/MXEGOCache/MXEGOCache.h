@@ -37,7 +37,7 @@
 #	define __nonnull
 #endif
 
-@interface EGOCache : NSObject
+@interface MXEGOCache : NSObject
 
 + (nonnull instancetype)currentCache __deprecated_msg("Renamed to globalCache");
 

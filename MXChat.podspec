@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.dependency 'SDWebImage/Core', '3.7.3'
   s.dependency 'DACircularProgress', '2.3.1'
   s.dependency 'MBProgressHUD', '0.9.1'
-  s.dependency 'EGOCache', '2.1.4'
+  s.dependency 'MXEGOCache', '2.1.4'
 
   s.source_files = 'MXChatView/**/*.{h,m}'
   s.resources = ['MXChatView/**/*.xib', 'MXChatView/MXChat.bundle']

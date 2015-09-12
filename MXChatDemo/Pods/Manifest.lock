@@ -1,12 +1,12 @@
 PODS:
   - DACircularProgress (2.3.1)
-  - EGOCache (2.1.4)
   - MBProgressHUD (0.9.1)
   - MXChat (0.1.2):
     - DACircularProgress (= 2.3.1)
-    - EGOCache (= 2.1.4)
     - MBProgressHUD (= 0.9.1)
+    - MXEGOCache (= 2.1.4)
     - SDWebImage/Core (= 3.7.3)
+  - MXEGOCache (2.1.4)
   - SDWebImage/Core (3.7.3)
 
 DEPENDENCIES:
@@ -18,9 +18,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
-  EGOCache: 1f28f0837429145c1085fe2de285fc335d087ff3
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
-  MXChat: e2137b98a79e54ac19d190bb3d1e467a8cb5e4bb
+  MXChat: a276381acb82d665eff5cc0d228c574cdfc081d5
+  MXEGOCache: 7cb2392ecc11ff1b1cc6024e42695c524e9368ed
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
 
 COCOAPODS: 0.38.2

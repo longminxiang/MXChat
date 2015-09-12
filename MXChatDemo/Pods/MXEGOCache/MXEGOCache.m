@@ -24,7 +24,7 @@
 //  THE SOFTWARE.
 //
 
-#import "EGOCache.h"
+#import "MXEGOCache.h"
 
 #if DEBUG
 #	define CHECK_FOR_EGOCACHE_PLIST() if([key isEqualToString:@"EGOCache.plist"]) { \
@@ -41,7 +41,7 @@ static inline NSString* cachePathForKey(NSString* directory, NSString* key) {
 
 #pragma mark -
 
-@interface EGOCache () {
+@interface MXEGOCache () {
 	dispatch_queue_t _cacheInfoQueue;
 	dispatch_queue_t _frozenCacheInfoQueue;
 	dispatch_queue_t _diskQueue;
@@ -53,7 +53,7 @@ static inline NSString* cachePathForKey(NSString* directory, NSString* key) {
 @property(nonatomic,copy) NSDictionary* frozenCacheInfo;
 @end
 
-@implementation EGOCache
+@implementation MXEGOCache
 
 + (instancetype)currentCache {
 	return [self globalCache];
