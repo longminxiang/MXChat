@@ -7,9 +7,9 @@
 
 #import "MXChatAudioHelper.h"
 #import "MXVoiceRecorder.h"
+#import "EGOCache.h"
 #import "MXChatAudioPlayer.h"
 #import "MXChatPrefix.h"
-#import <EGOCache/EGOCache.h>
 
 @implementation MXChatAudioHelper
 

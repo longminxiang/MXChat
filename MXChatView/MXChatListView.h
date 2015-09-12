@@ -33,6 +33,19 @@ typedef void (^MXChatListViewCustomCellBlock)(MXChatListCell *cell, id<MXChatDia
 - (void)insertDialogFromArray:(NSArray *)array;
 
 /**
+ *  删除dialog
+ *
+ *  @param dialog dialog
+ */
+- (void)deleteDialog:(id<MXChatDialog>)dialog;
+
+/**
+ *  删除所有dialog
+ *
+ */
+- (void)removeAllDialog;
+
+/**
  *  设置tableViewCell额外属性
  *
  *  @param customCellBlock block

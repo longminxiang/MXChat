@@ -88,6 +88,12 @@ static NSString *chatListCellId = @"MXChatListCell";
     if (self.deleteDialogBlock) self.deleteDialogBlock(dialog);
 }
 
+- (void)removeAllDialog
+{
+    [self.elements removeAllObjects];
+    [self.tableView reloadData];
+}
+
 #pragma mark
 #pragma mark === tableView delegate & datasource ===
 

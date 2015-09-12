@@ -12,9 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    self.badgeView.badgeText = @"9";
     [self.logoImageView mxc_setRadius:20];
-    NSLog(@"%@ alloc", [[self class] description]);
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -25,7 +23,6 @@
 
 - (void)dealloc
 {
-    NSLog(@"%@ dealloc", [[self class] description]);
 }
 
 @end

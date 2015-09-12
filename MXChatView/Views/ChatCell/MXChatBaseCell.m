@@ -46,7 +46,7 @@
     UIButton *button = [UIButton new];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button setImage:mxc_imageInChatBundle(@"avator") forState:UIControlStateNormal];
-    [button mxc_setRadius:20];
+    [button mxc_setRadius:MXCC_AVATAR_SIZE.width / 2];
     [self.contentView addSubview:button];
     _avatarButton = button;
     
@@ -152,6 +152,12 @@
 - (void)setState:(MXChatCellState)state
 {
     self.stateButton.cellState = state;
+}
+
+- (void)setShowTimeLabel:(BOOL)showTimeLabel
+{
+    _showTimeLabel = showTimeLabel;
+    self.timeLabel.hidden = !showTimeLabel;
 }
 
 - (void)setShowNameLabel:(BOOL)showNameLabel

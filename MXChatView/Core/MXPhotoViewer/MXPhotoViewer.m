@@ -85,6 +85,8 @@
 
 #define VIEWER_TAG  35323
 
+static UIStatusBarStyle _systemStatusBarStyle;
+
 + (void)showWithCount:(NSInteger)count cntIndex:(NSInteger)cntIndex detailViewSetter:(MXPhotoViewerDetailViewSetter)detailViewSetter
 {
     MXPhotoViewer *viewer = [[MXPhotoViewer alloc] initWithCount:count cntIndex:cntIndex detailViewSetter:detailViewSetter];
@@ -98,13 +100,14 @@
     [UIView animateWithDuration:0.25 animations:^{
         viewer.alpha = 1;
     } completion:nil];
+    _systemStatusBarStyle = [UIApplication sharedApplication].statusBarStyle;
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [viewer startLoadDetailViews];
 }
 
 + (void)dismiss
 {
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    [[UIApplication sharedApplication] setStatusBarStyle:_systemStatusBarStyle];
     UIView *viewer = [mxc_keyWindow() viewWithTag:VIEWER_TAG];
     [UIView animateWithDuration:0.25 animations:^{
         viewer.alpha = 0;
