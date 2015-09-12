@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "MXChat"
-  s.version          = "0.1.1"
+  s.version          = "0.1.2"
   s.summary          = "just chat"
 
   s.homepage         = "https://github.com/longminxiang/MXChat"
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
-  s.dependency 'SDWebImage', '3.7.2'
+  s.dependency 'SDWebImage/Core', '3.7.3'
   s.dependency 'DACircularProgress', '2.3.1'
   s.dependency 'MBProgressHUD', '0.9.1'
   s.dependency 'EGOCache', '2.1.4'
