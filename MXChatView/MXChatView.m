@@ -9,7 +9,6 @@
 #import "MXChatAudioHelper.h"
 #import "MXChatImageHelper.h"
 #import "UIView+ActionSheet.h"
-#import "UITableView+NoneAnimation.h"
 #import "UITableView+Refresh.h"
 #import "UIView+Radius.h"
 

@@ -10,6 +10,7 @@
 #import "MXChatMessage.h"
 #import "MXChatCell.h"
 #import "MXChatPrefix.h"
+#import "UITableView+NoneAnimation.h"
 
 @interface MXChatView : UIView
 

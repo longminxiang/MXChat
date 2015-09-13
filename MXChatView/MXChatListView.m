@@ -6,7 +6,6 @@
 //
 
 #import "MXChatListView.h"
-#import "UITableView+NoneAnimation.h"
 
 @interface MXChatListView()<UITableViewDataSource, UITableViewDelegate>
 
