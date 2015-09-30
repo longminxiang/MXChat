@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MXInputToobar.h"
 
 #define MXEXTENT_VIEW_HEIGHT            216
 #define MXINPUTVIEW_SLIDE_DURATION      0.25
@@ -15,6 +16,8 @@
 
 typedef void (^MXInputViewImageOutBlock)(UIImage *image, NSString *path, NSString *key);
 typedef void (^MXInputViewAudioOutBlock)(NSData *data, float time, NSString *path, NSString *key);
+
+@property (nonatomic, readonly) MXInputToobar *toobar;
 
 - (id)initWithSuperViewBounds:(CGRect)bounds;
 

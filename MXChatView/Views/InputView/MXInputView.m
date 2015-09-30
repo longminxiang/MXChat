@@ -8,7 +8,6 @@
 #import "MXInputView.h"
 #import "MXVoiceRecorder.h"
 #import "MXEmojiView.h"
-#import "MXInputToobar.h"
 #import "MXChatImageHelper.h"
 #import "MXChatPrefix.h"
 #import "MXExtentView.h"
@@ -27,7 +26,6 @@ typedef NS_ENUM(NSInteger, MXInputViewActiveType) {
 
 @property (nonatomic, readonly) MXEmojiView *emojiView;
 @property (nonatomic, readonly) MXExtentView *extenView;
-@property (nonatomic, readonly) MXInputToobar *toobar;
 @property (nonatomic, assign) MXInputViewActiveType activeType;
 
 @property (nonatomic, assign) float keyboardHeight;
@@ -93,7 +91,7 @@ typedef NS_ENUM(NSInteger, MXInputViewActiveType) {
     }];
     
     [toobar setVoiceRecordFinishedBlock:^(NSData *data, float time, NSString *path, NSString *key) {
-        if (self.outputVoiceBlock) self.outputVoiceBlock(data, time, path, key);
+        if (weaks.outputVoiceBlock) weaks.outputVoiceBlock(data, time, path, key);
     }];
     
     _toobar = toobar;
@@ -122,11 +120,13 @@ typedef NS_ENUM(NSInteger, MXInputViewActiveType) {
     view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [view setFrame:frame];
     [self addSubview:view];
+    
+    __weak typeof(self) weaks = self;
     [view setButtonsTouchedBlock:^(NSInteger tag) {
         if (tag >= 0 && tag <= 1) {
             [MXChatImageHelper showPhotoPickerOrCamera:tag completion:^(UIImage *image, NSString *path, NSString *key) {
                 if (!image) return;
-                if (self.outputImageBlock) self.outputImageBlock(image, path, key);
+                if (weaks.outputImageBlock) weaks.outputImageBlock(image, path, key);
             }];
         }
     }];
@@ -296,6 +296,7 @@ typedef NS_ENUM(NSInteger, MXInputViewActiveType) {
 
 - (void)dealloc
 {
+//    NSLog(@"%@ dealloc", NSStringFromClass([self class]));
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 

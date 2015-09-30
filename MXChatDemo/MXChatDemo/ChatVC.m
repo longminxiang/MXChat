@@ -34,30 +34,41 @@
     return self;
 }
 
++ (MXChatView *)cview
+{
+    static id obj;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        obj = [[MXChatView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    });
+    return obj;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor lightGrayColor];
 
-    CGRect frame = self.view.bounds;
-    MXChatView *chatView = [[MXChatView alloc] initWithFrame:frame];
+//    CGRect frame = self.view.bounds;
+    MXChatView *chatView = [[self class] cview];
     [self.view addSubview:chatView];
     
     self.chatView = chatView;
     
+    __weak typeof(self) weaks = self;
     [chatView setTextMessageOutBlock:^(NSString *text) {
         OMessage *msg = [OMessage textMessageWithText:text];
-        [self.chatView addMessage:msg];
+        [weaks.chatView addMessage:msg];
     }];
     
     [chatView setImageMessageOutBlock:^(UIImage *image, NSString *path, NSString *key) {
         OMessage *msg = [OMessage imageMessageWithKey:key path:path];
-        [self.chatView addMessage:msg];
+        [weaks.chatView addMessage:msg];
     }];
     
     [chatView setAudioMessageOutBlock:^(NSData *data, float time, NSString *path, NSString *key) {
         OMessage *msg = [OMessage audioMessageWithKey:key path:path time:time];
-        [self.chatView addMessage:msg];
+        [weaks.chatView addMessage:msg];
     }];
     
     [chatView setResendMessageBlock:^(id<MXChatMessage> message) {

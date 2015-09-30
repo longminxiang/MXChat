@@ -79,6 +79,11 @@ typedef void (^MXChatViewAudioOutBlock)(NSData *data, float time, NSString *path
  */
 - (void)setDeleteMessageBlock:(void (^)(id<MXChatMessage> message))deleteMessageBlock;
 
+/**
+ *  清理
+ */
+- (void)clean;
+
 @end
 
 @interface MXChatView (Refresh)

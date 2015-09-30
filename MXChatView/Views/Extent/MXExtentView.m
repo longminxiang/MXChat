@@ -68,4 +68,9 @@
     if (self.buttonsTouchedBlock) self.buttonsTouchedBlock(button.tag);
 }
 
+- (void)dealloc
+{
+//    NSLog(@"%@ dealloc", NSStringFromClass([self class]));
+}
+
 @end

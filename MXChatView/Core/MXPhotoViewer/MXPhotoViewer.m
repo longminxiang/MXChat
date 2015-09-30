@@ -280,7 +280,7 @@ static UIStatusBarStyle _systemStatusBarStyle;
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
     if (!error) {
-        NSLog(@"保存成功");
+//        NSLog(@"保存成功");
         mxc_showLoadingProgressWithMessage(@"保存成功", 1);
     }
 }

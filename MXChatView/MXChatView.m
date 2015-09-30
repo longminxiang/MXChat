@@ -68,24 +68,25 @@ static NSString *chatAudioCellId = @"chatAudioCellId";
     MXInputView *inputView = [[MXInputView alloc] initWithSuperViewBounds:self.bounds];
     [self addSubview:inputView];
     
+    __weak typeof(self) weaks = self;
     [inputView setFrameChangeBlock:^(CGRect oldFrame, CGRect newFrame) {
         CGFloat changeHeight = newFrame.size.height - oldFrame.size.height;
-        [self updateTableViewContentOffsetWithChangeHeight:changeHeight];
+        [weaks updateTableViewContentOffsetWithChangeHeight:changeHeight];
     }];
     
     [inputView setOutputTextBlock:^(NSString *text) {
-        if (self.textMessageOutBlock) self.textMessageOutBlock(text);
-        [self.tableView mxc_scrollToBottom:NO];
+        if (weaks.textMessageOutBlock) weaks.textMessageOutBlock(text);
+        [weaks.tableView mxc_scrollToBottom:NO];
     }];
     
     [inputView setOutputVoiceBlock:^(NSData *data, float time, NSString *path, NSString *key) {
-        if (self.audioMessageOutBlock) self.audioMessageOutBlock(data, time, path, key);
-        [self.tableView mxc_scrollToBottom:NO];
+        if (weaks.audioMessageOutBlock) weaks.audioMessageOutBlock(data, time, path, key);
+        [weaks.tableView mxc_scrollToBottom:NO];
     }];
     
     [inputView setOutputImageBlock:^(UIImage *image, NSString *path, NSString *key) {
-        if (self.imageMessageOutBlock) self.imageMessageOutBlock(image, path, key);
-        [self.tableView mxc_scrollToBottom:NO];
+        if (weaks.imageMessageOutBlock) weaks.imageMessageOutBlock(image, path, key);
+        [weaks.tableView mxc_scrollToBottom:NO];
     }];
     
     _inputView = inputView;
@@ -103,7 +104,6 @@ static NSString *chatAudioCellId = @"chatAudioCellId";
     _hasNewButton = button;
     
     [self updateTableViewContentInset];
-    
 }
 
 - (void)setFrame:(CGRect)frame
@@ -129,6 +129,14 @@ static NSString *chatAudioCellId = @"chatAudioCellId";
 - (id<MXChatMessage>)firstElement
 {
     return self.elements.count ? self.elements[0] : nil;
+}
+
+- (void)clean
+{
+    [self.elements removeAllObjects];
+    [self.tableView reloadData];
+    [self.inputView deactive];
+    self.inputView.toobar.textView.text = nil;
 }
 
 #pragma mark
@@ -416,12 +424,13 @@ static NSString *chatAudioCellId = @"chatAudioCellId";
 - (void)chatCellStateButtonTouched:(MXChatBaseCell *)cell
 {
     id<MXChatMessage> msg = self.elements[cell.tag];
+    __weak typeof(self) weaks = self;
     [self mxc_showActionSheetWithBlock:^(NSInteger buttonIndex) {
         if (buttonIndex == 0) {
-            [self resendMessage:msg];
+            [weaks resendMessage:msg];
         }
         else if (buttonIndex == 1) {
-            [self deleteMessage:msg];
+            [weaks deleteMessage:msg];
         }
     } title:@"发送失败" cancelButtonTitle:@"取消" destructiveButtonTitle:@"重新发送" otherButtonTitles:@"删除", nil];
 }
@@ -444,6 +453,7 @@ __weak id _tmpAudioCell;
 - (void)chatImageCell:(MXChatImageCell *)cell chatImageViewDidTouchedEnd:(UIImageView *)imageView
 {
     id cntObj = self.elements[cell.tag];
+    [self.inputView deactive];
     getImageMessagesFromChatMessages(self.elements, cntObj, ^(NSArray *imageMessages, NSInteger cntIndex) {
         [MXChatImageHelper showPhotoViewerWithImageMessages:imageMessages cntIndex:cntIndex];
     });
@@ -456,6 +466,11 @@ __weak id _tmpAudioCell;
         return YES;
     }
     return NO;
+}
+
+- (void)dealloc
+{
+//    NSLog(@"%@ dealloc", NSStringFromClass([self class]));
 }
 
 @end

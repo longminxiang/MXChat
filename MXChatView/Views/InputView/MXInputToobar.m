@@ -218,6 +218,7 @@
 
 - (void)dealloc
 {
+//    NSLog(@"%@ dealloc", NSStringFromClass([self class]));
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self.textView removeObserver:self forKeyPath:@"text" context:nil];
 }
