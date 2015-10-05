@@ -358,7 +358,7 @@ static NSString *chatAudioCellId = @"chatAudioCellId";
         id<MXChatImageMessage> aobj = (id<MXChatImageMessage>)obj;
         BOOL didResponse = [aobj respondsToSelector:@selector(imageURL)];
         NSString *imageURL = didResponse ? [aobj imageURL] : nil;
-        [acell.chatImageView setImageWithURL:imageURL];
+        [acell.chatImageView setImageWithURLString:imageURL];
     }
     else if (type == MXChatMessageTypeAudio) {
         MXChatAudioCell *acell = (MXChatAudioCell *)cell;

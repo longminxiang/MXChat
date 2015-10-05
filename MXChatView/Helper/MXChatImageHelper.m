@@ -23,25 +23,26 @@
 
 - (DALabeledCircularProgressView *)circularProgressView
 {
-    DALabeledCircularProgressView *view = objc_getAssociatedObject(self, _cmd);
+    NSInteger tag = 23413;
+    DALabeledCircularProgressView *view = (DALabeledCircularProgressView *)[self viewWithTag:tag];
     if (!view) {
         view = [[DALabeledCircularProgressView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 40.0f, 40.0f)];
-//        view.trackTintColor = [UIColor lightGrayColor];
-//        view.progressTintColor = [UIColor grayColor];
+        view.tag = tag;
+        view.trackTintColor = [UIColor lightGrayColor];
+        view.progressTintColor = [UIColor grayColor];
         view.progressLabel.textColor = [UIColor whiteColor];
         view.progressLabel.font = [UIFont systemFontOfSize:12];
         view.roundedCorners = YES;
         [self addSubview:view];
-        objc_setAssociatedObject(self, _cmd, view, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return view;
 }
 
 - (void)removeProgressView
 {
-    [self.circularProgressView removeFromSuperview];
-    const char* key = [NSStringFromSelector( @selector(circularProgressView)) UTF8String];
-    objc_setAssociatedObject(self, key, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    NSInteger tag = 23413;
+    DALabeledCircularProgressView *view = (DALabeledCircularProgressView *)[self viewWithTag:tag];
+    [view removeFromSuperview];
 }
 
 - (void)progressViewChangeProgress:(float)progress
@@ -61,7 +62,7 @@
 
 @implementation UIImageView (imageWithURL)
 
-- (void)setImageWithURL:(NSString *)url
+- (void)setImageWithURLString:(NSString *)url
 {
     [self sd_setImageWithURL:(NSURL *)url placeholderImage:mxc_imageInChatBundle(@"defaultImage")];
 }
@@ -77,9 +78,9 @@
         double progress = (double)receivedSize / (double)expectedSize;
         [self progressViewChangeProgress:progress];
     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        if (completion) completion(image);
         self.image = image;
         [self removeProgressView];
+        if (completion) completion(image);
     }];
 }
 

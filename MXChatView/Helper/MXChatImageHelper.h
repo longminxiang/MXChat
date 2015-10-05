@@ -36,7 +36,7 @@
  *
  *  @param url       url or key
  */
-- (void)setImageWithURL:(NSString *)url;
+- (void)setImageWithURLString:(NSString *)url;
 
 /**
  *  通过URL或key设置图片，显示进度圈
