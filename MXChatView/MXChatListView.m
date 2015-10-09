@@ -113,7 +113,7 @@ static NSString *chatListCellId = @"MXChatListCell";
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 65;
+    return 70;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -128,7 +128,7 @@ static NSString *chatListCellId = @"MXChatListCell";
     MXChatListCell *cell = [tableView dequeueReusableCellWithIdentifier:chatListCellId];
     id<MXChatDialog>obj = self.elements[row];
     cell.titleLabel.text = [obj title];
-    cell.messageLabel.text = [obj content];
+    cell.messageLabel.attributedString = [obj attributedText];
     cell.timeLabel.text = [obj timeString];
     cell.badgeView.badgeText = [obj badgeText];
     cell.tag = row;

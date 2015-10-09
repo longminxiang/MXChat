@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "MXChat"
-  s.version          = "0.1.6"
+  s.version          = "0.1.7"
   s.summary          = "just chat"
 
   s.homepage         = "https://github.com/longminxiang/MXChat"
@@ -18,6 +18,6 @@ Pod::Spec.new do |s|
   s.dependency 'DTCoreText', '1.6.16'
 
   s.source_files = 'MXChatView/**/*.{h,m}'
-  s.resources = ['MXChatView/**/*.xib', 'MXChatView/Resources/**/*']
+  s.resources = ['MXChatView/**/*.xib', 'MXChatView/Resources/**/*.bundle', 'MXChatView/Resources/Face/*.png']
 
 end

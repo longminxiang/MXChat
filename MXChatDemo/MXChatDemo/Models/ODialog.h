@@ -17,6 +17,7 @@ typedef NS_ENUM(NSInteger, ODialogType) {
 
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, copy) NSString *content;
+@property (nonatomic, readonly) NSAttributedString *attributedText;
 @property (nonatomic, copy) NSString *badgeText;
 @property (nonatomic, readonly) NSString *timeString;
 

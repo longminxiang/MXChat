@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MXChatBadgeView.h"
+#import <DTCoreText/DTCoreText.h>
 
 @interface MXChatListCell : UITableViewCell
 
@@ -14,7 +15,7 @@
 @property (nonatomic, weak) IBOutlet UIImageView *tagImageView;
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 @property (nonatomic, weak) IBOutlet UILabel *timeLabel;
-@property (nonatomic, weak) IBOutlet UILabel *messageLabel;
+@property (nonatomic, weak) IBOutlet DTAttributedTextContentView *messageLabel;
 @property (nonatomic, weak) IBOutlet MXChatBadgeButton *badgeView;
 
 @end

@@ -29,6 +29,7 @@
     
     ODialog *dialog = [ODialog new];
     dialog.owner = @"eric";
+    dialog.content = @"xxxxxx你好:angry:";
     [listView insertDialog:dialog];
     
     dialog = [ODialog new];

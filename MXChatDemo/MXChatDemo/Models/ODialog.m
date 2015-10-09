@@ -6,6 +6,7 @@
 //
 
 #import "ODialog.h"
+#import <DTCoreText/DTCoreText.h>
 
 @implementation ODialog
 
@@ -35,5 +36,15 @@
     _owner = [owner copy];
     _title = [owner copy];
 }
+
+- (void)setContent:(NSString *)content
+{
+    _content = [content copy];
+    content = [content mxc_parseMessageText];
+    NSDictionary *dic = @{DTDefaultFontSize:@15,DTMaxImageSize:[NSValue valueWithCGSize:CGSizeMake(20, 20)]};
+    NSData *data = [content dataUsingEncoding:NSUTF8StringEncoding];
+    _attributedText = [[NSAttributedString alloc] initWithHTMLData:data options:dic documentAttributes:NULL];
+}
+
 
 @end

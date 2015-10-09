@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MXChatMessage.h"
 
 @protocol MXChatDialog <NSObject>
 
@@ -13,5 +14,7 @@
 - (NSString *)content;
 - (NSString *)timeString;
 - (NSString *)badgeText;
+
+- (NSAttributedString *)attributedText;
 
 @end
