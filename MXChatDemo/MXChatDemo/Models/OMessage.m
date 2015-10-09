@@ -6,6 +6,7 @@
 //
 
 #import "OMessage.h"
+#import <DTCoreText/DTCoreText.h>
 
 @implementation OMessage
 
@@ -63,6 +64,15 @@
     msg.ownerType = MXChatMessageOwnerTypeMine;
     msg.sendTime = [NSDate date];
     return msg;
+}
+
+- (void)setText:(NSString *)text
+{
+    _text = [text copy];
+    text = [text mxc_parseMessageText];
+    NSDictionary *dic = @{DTDefaultFontSize:@15,DTMaxImageSize:[NSValue valueWithCGSize:CGSizeMake(30, 30)]};
+    NSData *data = [text dataUsingEncoding:NSUTF8StringEncoding];
+    _attributedText = [[NSAttributedString alloc] initWithHTMLData:data options:dic documentAttributes:NULL];
 }
 
 @end

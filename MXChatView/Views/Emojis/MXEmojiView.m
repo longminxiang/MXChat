@@ -8,8 +8,9 @@
 #import "MXEmojiView.h"
 #import "MXEmojis.h"
 #import "MXChatPrefix.h"
+#import "FaceItem.h"
 
-#define MXEMOJI_SIZE                      CGSizeMake(50, 40)
+#define MXEMOJI_SIZE                      CGSizeMake(60, 40)
 
 @interface MXEmojiView ()<UIScrollViewDelegate>
 
@@ -25,22 +26,22 @@
 
 @implementation MXEmojiView
 
-- (NSArray *)emojis
-{
-    static NSArray *emojis;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        emojis = EMOJIS;
-    });
-    return emojis;
-}
+//- (NSArray *)emojis
+//{
+//    static NSArray *emojis;
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        emojis = EMOJIS;
+//    });
+//    return emojis;
+//}
 
 - (id)initWithFrame:(CGRect )frame textInput:(id<UITextInput>)textInput
 {
     if (self = [super initWithFrame:frame]) {
         self.textInput = textInput;
         
-        _allEmoji = [self emojis];
+        _allEmoji = [FaceItem faceItems];
         NSInteger count = _allEmoji.count;
         NSInteger perRowCount = frame.size.width / MXEMOJI_SIZE.width;
         CGFloat exx = frame.size.width - (perRowCount * MXEMOJI_SIZE.width);
@@ -72,8 +73,8 @@
                         UIButton *button = [[UIButton alloc] initWithFrame:emojiFrame];
                         button.titleLabel.font = [UIFont systemFontOfSize:18];
                         button.tag = current;
-                        NSString *emoji = _allEmoji[button.tag];
-                        [button setTitle:emoji forState:UIControlStateNormal];
+                        FaceItem *item = _allEmoji[button.tag];
+                        [button setImage:[UIImage imageNamed:item.imageName] forState:UIControlStateNormal];
                         [button addTarget:self action:@selector(emojiButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
                         [scrollView addSubview:button];
                         current++;
@@ -113,7 +114,8 @@
 - (void)emojiButtonTouched:(UIButton *)button
 {
     if ([self.textInput respondsToSelector:@selector(replaceRange:withText:)] && [self.textInput respondsToSelector:@selector(selectedTextRange)]) {
-        NSString *emoji = self.allEmoji[button.tag];
+        FaceItem *item = self.allEmoji[button.tag];
+        NSString *emoji = item.code;
         UITextRange* selectedRange = [self.textInput selectedTextRange];
         [self.textInput replaceRange:selectedRange withText:emoji];
     }

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "64C43A3EEF97C80A54C324D5"
+               BlueprintIdentifier = "055557F78E4C0BB5461B2930"
                BuildableName = "libMXChat.a"
                BlueprintName = "MXChat"
                ReferencedContainer = "container:Pods.xcodeproj">

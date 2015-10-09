@@ -32,7 +32,7 @@
 
 @implementation MXChatView
 
-static NSString *chatTextCellId = @"chatTextCellId";
+static NSString *_chatFaceTextCellId = @"MXChatFaceTextCell";
 static NSString *chatImageCellId = @"chatImageCellId";
 static NSString *chatAudioCellId = @"chatAudioCellId";
 
@@ -53,7 +53,7 @@ static NSString *chatAudioCellId = @"chatAudioCellId";
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.delegate = self;
     tableView.dataSource = self;
-    [tableView registerClass:[MXChatTextCell class] forCellReuseIdentifier:chatTextCellId];
+    [tableView registerClass:[MXChatFaceTextCell class] forCellReuseIdentifier:_chatFaceTextCellId];
     [tableView registerClass:[MXChatImageCell class] forCellReuseIdentifier:chatImageCellId];
     [tableView registerClass:[MXChatAudioCell class] forCellReuseIdentifier:chatAudioCellId];
     [self addSubview:tableView];
@@ -263,7 +263,7 @@ static NSString *chatAudioCellId = @"chatAudioCellId";
     MXChatMessageType type = [obj type];
     if (type == MXChatMessageTypeImage) return chatImageCellId;
     if (type == MXChatMessageTypeAudio) return chatAudioCellId;
-    return chatTextCellId;
+    return _chatFaceTextCellId;
 }
 
 - (id)tempCellWithCellId:(NSString *)cellId
@@ -348,10 +348,10 @@ static NSString *chatAudioCellId = @"chatAudioCellId";
 {
     MXChatMessageType type = [obj type];
     if (type == MXChatMessageTypeText) {
-        MXChatTextCell *acell = (MXChatTextCell *)cell;
+        MXChatFaceTextCell *acell = (MXChatFaceTextCell *)cell;
         id<MXChatTextMessage> aobj = (id<MXChatTextMessage>)obj;
         BOOL didResponse = [aobj respondsToSelector:@selector(text)];
-        acell.textView.text = didResponse ? [aobj text] : nil;
+        acell.textView.attributedString = didResponse ? [aobj attributedText] : nil;
     }
     else if (type == MXChatMessageTypeImage) {
         MXChatImageCell *acell = (MXChatImageCell *)cell;

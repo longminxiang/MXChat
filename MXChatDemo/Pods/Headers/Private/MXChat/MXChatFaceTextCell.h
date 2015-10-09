@@ -1,0 +1,1 @@
+../../../../../MXChatView/Views/ChatCell/MXChatFaceTextCell.h

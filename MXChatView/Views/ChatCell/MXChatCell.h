@@ -12,5 +12,6 @@
 #import "MXChatTextCell.h"
 #import "MXChatImageCell.h"
 #import "MXChatAudioCell.h"
+#import "MXChatFaceTextCell.h"
 
 #endif

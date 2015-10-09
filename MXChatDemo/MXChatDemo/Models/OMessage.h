@@ -21,6 +21,7 @@
 
 //文本
 @property (nonatomic, copy) NSString *text;
+@property (nonatomic, readonly) NSAttributedString *attributedText;
 
 //图像
 @property (nonatomic, copy) NSString *imageURL;

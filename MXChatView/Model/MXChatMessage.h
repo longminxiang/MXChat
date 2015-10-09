@@ -42,6 +42,8 @@ typedef NS_ENUM(NSInteger, MXChatMessageOwnerType) {
 
 - (NSString *)text;
 
+- (NSAttributedString *)attributedText;
+
 @end
 
 @protocol MXChatImageMessage <MXChatMessage>
@@ -58,3 +60,9 @@ typedef NS_ENUM(NSInteger, MXChatMessageOwnerType) {
 @end
 
 void getImageMessagesFromChatMessages(NSArray *messages, id cntMsg, void (^completion)(NSArray *imageMessages, NSInteger cntIndex));
+
+@interface NSString (MXChatMessage)
+
+- (NSString *)mxc_parseMessageText;
+
+@end
