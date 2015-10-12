@@ -17,8 +17,6 @@ Pod::Spec.new do |s|
   s.dependency 'MXEGOCache', '2.1.4'
   s.dependency 'DTCoreText', '1.6.16'
 
-  s.ios.vendored_frameworks = 'lame.framework'
-
   s.source_files = 'MXChatView/**/*.{h,m,framework}'
   s.resources = ['MXChatView/**/*.xib', 'MXChatView/Resources/**/*.bundle', 'MXChatView/Resources/Face/*.png']
 
