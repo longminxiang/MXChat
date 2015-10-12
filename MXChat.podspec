@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "MXChat"
-  s.version          = "0.1.7"
+  s.version          = "0.1.8"
   s.summary          = "just chat"
 
   s.homepage         = "https://github.com/longminxiang/MXChat"
@@ -16,6 +16,7 @@ Pod::Spec.new do |s|
   s.dependency 'MBProgressHUD', '0.9.1'
   s.dependency 'MXEGOCache', '2.1.4'
   s.dependency 'DTCoreText', '1.6.16'
+  s.dependency 'mp3lame-for-ios', '0.1.1'
 
   s.source_files = 'MXChatView/**/*.{h,m}'
   s.resources = ['MXChatView/**/*.xib', 'MXChatView/Resources/**/*.bundle', 'MXChatView/Resources/Face/*.png']

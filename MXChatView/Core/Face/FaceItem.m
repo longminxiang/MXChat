@@ -84,7 +84,7 @@
             item.code = codes[i];
             NSString *imageName = [item.code substringFromIndex:1];
             imageName = [imageName substringToIndex:imageName.length - 1];
-            imageName = [NSString stringWithFormat:@"emoji_%@.png", imageName];
+            imageName = [NSString stringWithFormat:@"emoji_%@@2x.png", imageName];
             item.imageName = imageName;
             [faces addObject:item];
         }

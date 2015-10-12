@@ -26,11 +26,17 @@
 
 - (void)layoutSubviews
 {
-    self.textView.frame = CGRectMake(0, 0, [self maxContentWidth] - MXCC_FACE_TEXTVIEW_ORIGIN.x * 2, 60);
+    UIEdgeInsets insets = self.chatContentInsets;
+    if (self.direction) {
+        CGFloat left = insets.left;
+        insets.left = insets.right;
+        insets.right = left;
+    }
+    self.textView.frame = CGRectMake(insets.left, insets.top, [self maxContentWidth] - MXCC_FACE_TEXTVIEW_ORIGIN.x * 2, 60);
     CGRect tframe = [self.textView.layoutFrame intrinsicContentFrame];
     if (tframe.size.height < 25) tframe.size.height = 25;
     CGRect frame = self.textView.bounds;
-    frame.origin = MXCC_FACE_TEXTVIEW_ORIGIN;
+    frame.origin = CGPointMake(insets.left, insets.top);
     frame.size = tframe.size;
     self.textView.frame = frame;
     

@@ -124,7 +124,30 @@
 - (void)deleteButtonTouched:(UIButton *)button
 {
     if ([self.textInput respondsToSelector:@selector(deleteBackward)]) {
-        [self.textInput deleteBackward];
+        NSString *text = [self.textInput text];
+        if ([text hasSuffix:@":"] && text.length > 1) {
+            NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:@":([a-z0-9_]*):" options:NSRegularExpressionUseUnicodeWordBoundaries error:nil];
+            NSRange range = NSMakeRange(0, text.length);
+            NSArray *results = [regular matchesInString:text options:NSMatchingWithoutAnchoringBounds range:range];
+            if (results.count) {
+                NSTextCheckingResult *result = [results lastObject];
+                NSString *code = [text substringWithRange:result.range];
+                FaceItem *item = [FaceItem itemWithCode:code];
+                if (item) {
+                    text = [text stringByReplacingCharactersInRange:result.range withString:@""];
+                    [self.textInput setText:text];
+                }
+                else {
+                    [self.textInput deleteBackward];
+                }
+            }
+            else {
+                [self.textInput deleteBackward];
+            }
+        }
+        else {
+            [self.textInput deleteBackward];
+        }
     }
 }
 

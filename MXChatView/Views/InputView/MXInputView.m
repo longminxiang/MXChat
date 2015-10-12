@@ -138,11 +138,9 @@ typedef NS_ENUM(NSInteger, MXInputViewActiveType) {
 
 - (void)deactive
 {
-    if (self.active) {
-        [self.toobar deactive];
-        self.activeType = MXInputViewActiveNone;
-        [self updateFrame];
-    }
+    [self.toobar deactive];
+    self.activeType = MXInputViewActiveNone;
+    [self updateFrame];
 }
 
 #pragma mark

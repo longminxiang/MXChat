@@ -12,10 +12,12 @@ PODS:
   - DTFoundation/UIKit (1.7.8):
     - DTFoundation/Core
   - MBProgressHUD (0.9.1)
-  - MXChat (0.1.6):
+  - mp3lame-for-ios (0.1.1)
+  - MXChat (0.1.8):
     - DACircularProgress (= 2.3.1)
     - DTCoreText (= 1.6.16)
     - MBProgressHUD (= 0.9.1)
+    - mp3lame-for-ios (= 0.1.1)
     - MXEGOCache (= 2.1.4)
     - SDWebImage/Core (= 3.7.3)
   - MXEGOCache (2.1.4)
@@ -33,7 +35,8 @@ SPEC CHECKSUMS:
   DTCoreText: 934a16fe9ffdd169c96261721b39dc312b75713d
   DTFoundation: 46e2b2fafe78d67febfd8d1f85fe9845a093f00e
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
-  MXChat: a76a8c00c65b97f8d906837402ef0872d8bd9f55
+  mp3lame-for-ios: 4daeb5686885be66438154050e3fe975d4ee1f07
+  MXChat: feec671a3be62b3d0519ba8fd5c7e3ed312e6846
   MXEGOCache: 7cb2392ecc11ff1b1cc6024e42695c524e9368ed
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
 

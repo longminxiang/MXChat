@@ -15,14 +15,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F05-lg-x7U">
-                        <rect key="frame" x="172" y="7" width="20" height="20"/>
+                        <rect key="frame" x="177" y="7" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="Hx2-lK-NOG"/>
                             <constraint firstAttribute="width" constant="20" id="tAb-LW-039"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="云天青的小群" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVX-7H-Dr0">
-                        <rect key="frame" x="66" y="7" width="96" height="20"/>
+                        <rect key="frame" x="71" y="7" width="96" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="9ai-gY-wO6"/>
                         </constraints>
@@ -41,9 +41,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g73-qw-ZFL">
-                        <rect key="frame" x="8" y="7" width="50" height="55"/>
+                        <rect key="frame" x="8" y="7" width="55" height="55"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="50" id="nOl-ov-wCn"/>
+                            <constraint firstAttribute="width" constant="55" id="nOl-ov-wCn"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpP-5f-MGJ" customClass="MXChatBadgeButton">
@@ -54,8 +54,8 @@
                             <constraint firstAttribute="height" constant="20" id="MN3-aP-JFC"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0UO-RU-34U" customClass="DTAttributedTextContentView">
-                        <rect key="frame" x="66" y="35" width="199" height="26"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0UO-RU-34U" customClass="DTAttributedLabel">
+                        <rect key="frame" x="71" y="35" width="194" height="26"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="eei-pa-Lma"/>

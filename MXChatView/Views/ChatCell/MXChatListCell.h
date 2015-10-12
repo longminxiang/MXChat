@@ -15,7 +15,7 @@
 @property (nonatomic, weak) IBOutlet UIImageView *tagImageView;
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 @property (nonatomic, weak) IBOutlet UILabel *timeLabel;
-@property (nonatomic, weak) IBOutlet DTAttributedTextContentView *messageLabel;
+@property (nonatomic, weak) IBOutlet DTAttributedLabel *messageLabel;
 @property (nonatomic, weak) IBOutlet MXChatBadgeButton *badgeView;
 
 @end
