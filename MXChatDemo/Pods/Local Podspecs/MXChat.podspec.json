@@ -30,12 +30,12 @@
     ],
     "DTCoreText": [
       "1.6.16"
+    ],
+    "mp3lame-for-ios": [
+      "0.1.1"
     ]
   },
-  "ios": {
-    "vendored_frameworks": "lame.framework"
-  },
-  "source_files": "MXChatView/**/*.{h,m,framework}",
+  "source_files": "MXChatView/**/*.{h,m}",
   "resources": [
     "MXChatView/**/*.xib",
     "MXChatView/Resources/**/*.bundle",
