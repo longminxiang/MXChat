@@ -1,0 +1,2 @@
+MXCHAT_FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/../../MXChatView/Vendor"
+MXCHAT_OTHER_LDFLAGS = -framework "lame"

@@ -1,1 +1,1 @@
-../../../../../MXChatView/Core/MXAudio/MXChatAudioPlayer.h
+../../../../../MXChatView/MXChatView/Core/MXAudio/MXChatAudioPlayer.h

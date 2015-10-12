@@ -1,1 +1,1 @@
-../../../../../MXChatView/Categorys/UIImageView+SingalTap.h
+../../../../../MXChatView/MXChatView/Categorys/UIImageView+SingalTap.h

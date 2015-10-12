@@ -1,1 +1,1 @@
-../../../../../MXChatView/Categorys/UIImage+FixOrientation.h
+../../../../../MXChatView/MXChatView/Categorys/UIImage+FixOrientation.h

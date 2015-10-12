@@ -1,1 +1,1 @@
-../../../../../MXChatView/Views/ChatCell/MXChatTextCell.h
+../../../../../MXChatView/MXChatView/Views/ChatCell/MXChatTextCell.h

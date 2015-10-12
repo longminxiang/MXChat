@@ -1,1 +1,1 @@
-../../../../../MXChatView/Views/Emojis/MXEmojis.h
+../../../../../MXChatView/MXChatView/Views/Emojis/MXEmojis.h

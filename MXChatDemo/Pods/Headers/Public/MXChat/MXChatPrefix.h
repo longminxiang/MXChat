@@ -1,1 +1,1 @@
-../../../../../MXChatView/MXChatPrefix.h
+../../../../../MXChatView/MXChatView/MXChatPrefix.h

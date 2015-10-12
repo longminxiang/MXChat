@@ -1,1 +1,1 @@
-../../../../../MXChatView/Categorys/NSData+MD5.h
+../../../../../MXChatView/MXChatView/Categorys/NSData+MD5.h

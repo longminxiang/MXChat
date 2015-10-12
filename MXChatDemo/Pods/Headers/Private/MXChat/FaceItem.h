@@ -1,1 +1,1 @@
-../../../../../MXChatView/Core/Face/FaceItem.h
+../../../../../MXChatView/MXChatView/Core/Face/FaceItem.h

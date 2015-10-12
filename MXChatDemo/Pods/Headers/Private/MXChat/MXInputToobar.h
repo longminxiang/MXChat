@@ -1,1 +1,1 @@
-../../../../../MXChatView/Views/InputView/MXInputToobar.h
+../../../../../MXChatView/MXChatView/Views/InputView/MXInputToobar.h

@@ -1,1 +1,1 @@
-../../../../../MXChatView/Helper/MXChatAudioHelper.h
+../../../../../MXChatView/MXChatView/Helper/MXChatAudioHelper.h

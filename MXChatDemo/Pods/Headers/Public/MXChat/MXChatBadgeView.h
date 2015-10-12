@@ -1,1 +1,1 @@
-../../../../../MXChatView/Views/Common/MXChatBadgeView.h
+../../../../../MXChatView/MXChatView/Views/Common/MXChatBadgeView.h

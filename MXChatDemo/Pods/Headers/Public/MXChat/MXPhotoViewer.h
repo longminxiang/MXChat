@@ -1,1 +1,1 @@
-../../../../../MXChatView/Core/MXPhotoViewer/MXPhotoViewer.h
+../../../../../MXChatView/MXChatView/Core/MXPhotoViewer/MXPhotoViewer.h

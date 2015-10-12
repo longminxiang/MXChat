@@ -1,1 +1,1 @@
-../../../../../MXChatView/Views/Common/MXChatStateButton.h
+../../../../../MXChatView/MXChatView/Views/Common/MXChatStateButton.h

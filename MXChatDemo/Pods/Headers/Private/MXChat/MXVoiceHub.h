@@ -1,1 +1,1 @@
-../../../../../MXChatView/Core/MXAudio/MXVoiceHub.h
+../../../../../MXChatView/MXChatView/Core/MXAudio/MXVoiceHub.h

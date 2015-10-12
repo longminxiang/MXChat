@@ -16,9 +16,10 @@ Pod::Spec.new do |s|
   s.dependency 'MBProgressHUD', '0.9.1'
   s.dependency 'MXEGOCache', '2.1.4'
   s.dependency 'DTCoreText', '1.6.16'
-  s.dependency 'mp3lame-for-ios', '0.1.1'
 
-  s.source_files = 'MXChatView/**/*.{h,m}'
-  s.resources = ['MXChatView/**/*.xib', 'MXChatView/Resources/**/*.bundle', 'MXChatView/Resources/Face/*.png']
+  s.vendored_frameworks = 'MXChatView/Vendor/lame.framework'
+
+  s.source_files = 'MXChatView/MXChatView/**/*.{h,m}'
+  s.resources = ['MXChatView/MXChatView/**/*.xib', 'MXChatView/MXChatView/Resources/**/*.bundle', 'MXChatView/MXChatView/Resources/Face/*.png']
 
 end
